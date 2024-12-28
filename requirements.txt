@@ -1,2 +1,1 @@
-flask
-requests
+openai==1.58.1\ntqdm>4
