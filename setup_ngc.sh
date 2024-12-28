@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Install NGC CLI
+# Download NGC CLI
 curl -O https://ngc.nvidia.com/downloads/ngccli_linux.zip
 unzip ngccli_linux.zip && chmod u+x ngc
 
@@ -10,5 +10,6 @@ sudo mv ngc /usr/local/bin/
 # Cleanup
 rm ngccli_linux.zip && rm ngccli_linux.zip.md5
 
-# Initial configuration placeholder
-echo "Run ngc config set to configure your CLI with appropriate credentials."
+# Configuration using environment variables
+ngc config set --apiKey "${NGC_API_KEY}"
+echo "Ensure NGC_API_KEY is set in your environment variables."
